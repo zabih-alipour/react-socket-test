@@ -17,10 +17,10 @@ const PubSubBus = {
 			console.log("Subscription list in sub" + JSON.stringify(this.pubSubMap))
 			if (!this.pubSubMap.has(mapKey)) {
 				this.pubSubMap.set(mapKey, [{ fields: [], eventAction: (args) => console.log("Initial subscription for " + mapKey) }]);
-			}
-
-			if (this.pubSubMap.get(mapKey)) {
-				this.pubSubMap.get(mapKey).push(action);
+			} else {
+				if (this.pubSubMap.get(mapKey)) {
+					this.pubSubMap.get(mapKey).push(action);
+				}
 			}
 		}
 		return this;

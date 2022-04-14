@@ -1,0 +1,5 @@
+{"instrumentId":"1234","metadata":"instrument","price":1254,"lastPrice":14587,"volume":255555,"name":"Something"}
+
+{"instrumentId":"1234","metadata":"instrument","volume":22222,"name":"Something3"}
+{"instrumentId":"1234","metadata":"instrument","volume":555555}
+{"instrumentId":"1234","metadata":"instrument","name":"Somethin2g"}
