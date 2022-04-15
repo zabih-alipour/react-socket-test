@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Emmiter from '../Emmiter'
 
-export default function Detail(props) {
+export default function PriceVolume(props) {
 	const { instrument } = props
 	const [info, setInfo] = useState(null);
 	const [blinkers, setBlinkers] = useState([]);
@@ -27,12 +27,12 @@ export default function Detail(props) {
 				setInfo(preMessages=>{
 					return {...instrument}
 				})
-				setBlinkers(["name", "volume"])
+				setBlinkers(["price", "volume"])
 			}
 
 			var intrestedData = {
 				id: instrument?.instrumentId,
-				fields: ["name", "volume"]
+				fields: ["price", "volume"]
 			}
 			Emmiter.subscribe(props?.instrument?.metadata, handleStatusChange, intrestedData)
 		}
@@ -46,22 +46,22 @@ export default function Detail(props) {
 
 	return (
 		<div className="p-10 m-3">
-			{console.log("Detail rendring")}
+			{console.log("PriceVolume rendring")}
 			<div className="card text-center">
 				<div className="card-body">
-					<h4 className="card-title">Name & Volume</h4>
+					<h4 className="card-title">Price & Volume</h4>
 					<h6 className="card-subtitle mb-2 text-muted">Instrument id <b>[{props?.instrument?.instrumentId}]</b></h6>
 					{/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
 					<table className="table table-inverse">
 						<thead>
 							<tr>
-								<th>Name</th>
+								<th>Price</th>
 								<th>Volume</th>
 							</tr>
 						</thead>
 						<tbody style={{color: "red"}}>
 							<tr>
-								<td className={`${blinkers.includes("name") ? "blink" : ""}`}>{info?.name}</td>
+								<td className={`${blinkers.includes("price") ? "blink" : ""}`}>{info?.price}</td>
 								<td className={`${blinkers.includes("volume") ? "blink" : ""}`}>{info?.volume}</td>
 							</tr>
 						</tbody>

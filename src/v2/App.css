@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.blink {
+  animation: blinker 1s linear infinite;
+  background:green;
+  color:white;
+  font-weight:bold;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

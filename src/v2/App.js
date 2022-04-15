@@ -40,10 +40,18 @@ function App() {
 
   return (
     <div className="App">
-
+      {console.log("App rendring")}
       <MessageCreator onChange={onChange} />
-      <Messages onChange={onChange} initial={instrument} />
-      <InstrumentDetail instument={instrument} />
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-5">
+            <InstrumentDetail instument={instrument} />
+          </div>
+          <div className="col-7">
+            <Messages initial={instrument} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
